@@ -1,4 +1,6 @@
 {{$NEXT}}
+    * New feature: schedule config is now run through Message::Transform,
+      which allows variable substitution.
 
 1.161160  2016-04-25 15:29:52-07:00 America/Los_Angeles
     * Initial release

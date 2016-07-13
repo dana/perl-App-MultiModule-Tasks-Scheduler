@@ -34,6 +34,8 @@ my $config = {
                 schedule => {
                     recurringThing => {
                         recur => 5,
+                        this => 'that',
+                        x => ' specials/"whatever"',
                     }
                 },
             },
@@ -80,6 +82,8 @@ message_is(
     {   recur => 5,
         source => 'Scheduler',
         scheduler_send_count => 1,
+        this => 'that',
+        x => 'whatever',
         scheduler_scheduled_key => 'recurringThing',
     }, ['scheduler_create_ts','.ipc_transit_meta','scheduler_send_ts']
 );
@@ -96,6 +100,8 @@ message_is(
     {   recur => 5,
         source => 'Scheduler',
         scheduler_send_count => 2,
+        this => 'that',
+        x => 'whatever',
         scheduler_scheduled_key => 'recurringThing',
     }, ['scheduler_create_ts','.ipc_transit_meta','scheduler_send_ts']
 );
@@ -112,6 +118,8 @@ message_is(
     {   recur => 5,
         source => 'Scheduler',
         scheduler_send_count => 3,
+        this => 'that',
+        x => 'whatever',
         scheduler_scheduled_key => 'recurringThing',
     }, ['scheduler_create_ts','.ipc_transit_meta','scheduler_send_ts']
 );

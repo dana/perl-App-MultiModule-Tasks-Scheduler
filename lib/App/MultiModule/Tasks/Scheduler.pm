@@ -46,7 +46,8 @@ sub _tick {
 
         #so we should probably merge dynamic_schedule into
         #schedule here.
-        my $merged_schedule = Storable::dclone($schedule);
+        my $merged_schedule = {};
+        mtransform($merged_schedule, $schedule);
         mtransform($merged_schedule, $dynamic_schedule);
         my $ts = time;
         my @scheduled_keys = keys %$merged_schedule;
